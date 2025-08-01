@@ -39,4 +39,3 @@
 /Front         # Frontend (React, Next.js)
 /Database      # Scripts SQL et base de données
 .gitignore     # Fichiers ignorés par Git (node_modules, .env, etc.)
-README.md      # Ce fichier de documentation
