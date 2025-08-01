@@ -1,0 +1,78 @@
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+
+const Developpeur = () => {
+  const [nom, setNom] = useState('');
+  const [email, setEmail] = useState('');
+  const [motDePasse, setMotDePasse] = useState('');
+  const [poste, setPoste] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    console.log("Nom:", nom);
+    console.log("Email:", email);
+    console.log("Mot de passe:", motDePasse);
+    console.log("Poste:", poste);
+    
+    setNom('');
+    setEmail('');
+    setMotDePasse('');
+    setPoste('');
+  };
+
+  return (
+    <div className="container">
+      <h2 className="text-center mb-4">Développeur</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="nom" className="form-label">Nom:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="nom"
+            value={nom}
+            onChange={(e) => setNom(e.target.value)}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">Email:</label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="motDePasse" className="form-label">Mot de passe:</label>
+          <input
+            type="password"
+            className="form-control"
+            id="motDePasse"
+            value={motDePasse}
+            onChange={(e) => setMotDePasse(e.target.value)}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="poste" className="form-label">Poste:</label>
+          <select
+            className="form-select"
+            id="poste"
+            value={poste}
+            onChange={(e) => setPoste(e.target.value)}
+          >
+            <option value="">Sélectionnez un poste</option>
+            <option value="testeur">Testeur</option>
+            <option value="dev-front-end">Développeur Front-end</option>
+            <option value="backend">Backend</option>
+          </select>
+        </div>
+        <button type="submit" className="btn btn-primary">Ajouter</button>
+      </form>
+    </div>
+  );
+};
+
+export default Developpeur ;
